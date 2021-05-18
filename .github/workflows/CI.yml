@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - '**.md'
+      - '**.yml'
+
+jobs:
+  check:
+    name: check
+    strategy:
+      fail-fast: false
+      matrix:
+        examples:
+          - "libraries/SPI/examples"
+          - "libraries/EEPROM/examples"
+          - "libraries/megaTinyCore/examples"
+
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install latest
+        run: |
+          python -m pip install --upgrade pip
+          pip install -U https://github.com/OS-Q/M03/releases/latest/download/qio.zip
+          qio platform install https://github.com/OS-Q/P115/archive/master.zip
+
+      - name: Build
+        if: success()
+        run: |
+          pio run -d ${{ matrix.examples }}

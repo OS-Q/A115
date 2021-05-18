@@ -1,16 +1,3 @@
-/***
-    eeprom_iteration example.
-
-    A set of example snippets highlighting the
-    simplest methods for traversing the EEPROM.
-
-    Running this sketch is not necessary, this is
-    simply highlighting certain programming methods.
-
-    Written by Christopher Andrews 2015
-    Released under MIT licence.
-***/
-
 #include <EEPROM.h>
 
 void setup() {

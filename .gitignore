@@ -7,13 +7,9 @@ __pycache__
 LICENSE*
 *.png
 *.jpg
-examples/**/*.yml
-examples/**/*.md
 **/CONTR*
 **/CHANGE*
 .gitmodules
-spl.py
-mxchip.py
 README
 .piopm
 travis-ci
