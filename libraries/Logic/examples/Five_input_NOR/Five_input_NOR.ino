@@ -1,20 +1,3 @@
-/***********************************************************************|
-  | tinyAVR Configurable Custom Logic library                             |
-  |                                                                       |
-  | Five_input_NOR.ino                                                    |
-  |                                                                       |
-  | A library for interfacing with the megaAVR Configurable Custom Logic. |
-  | Developed in 2019 by MCUdude.                                         |
-  | https://github.com/MCUdude/                                           |
-  |                                                                       |
-  | In this example we use two logic blocks to get five inputs.           |
-  | The output of block 1 is connected to one of the inputs of block 0.   |
-  | With the correct truth tables values we can make the output of        |
-  | block 0 go high when all inputs are low.                              |
-  |                                                                       |
-  | See Microchip's application note TB3218 for more information.         |
-  |***********************************************************************/
-
 #include <Logic.h>
 
 void setup() {
