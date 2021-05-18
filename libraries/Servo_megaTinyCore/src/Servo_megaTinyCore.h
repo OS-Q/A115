@@ -59,14 +59,14 @@
 */
 
 // Architecture specific include
-#if defined(ARDUINO_ARCH_MEGAAVR) && defined(MEGATINYCORE)
-  #include "megaavr/ServoTimers.h"
-  #if (F_CPU==1000000)
-    #warning "Running at 1MHz results in unstable servo signal."
-  #endif
-#else
-  #error "This version of the library only supports megaTinyCore-supported processors."
+// #if defined(ARDUINO_ARCH_MEGAAVR) && defined(MEGATINYCORE)
+#include "megaavr/ServoTimers.h"
+#if (F_CPU==1000000)
+  #warning "Running at 1MHz results in unstable servo signal."
 #endif
+// #else
+//   #error "This version of the library only supports megaTinyCore-supported processors."
+// #endif
 
 #define Servo_VERSION           2     // software version of this library
 
